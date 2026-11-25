@@ -1,0 +1,536 @@
+## Histórico do Codex
+
+### 2026-11-02 22:43 -03:00
+Tarefa solicitada:
+- Interpretar o enunciado do trabalho final de Probabilidade e Modelos Estocásticos (EPS7002), organizar as exigências e pensar em ideias e etapas de execução.
+
+Etapa executada:
+- Etapa 1: leitura integral e conferência visual das duas páginas do enunciado; planejamento inicial, sem escolher definitivamente o tema ou iniciar a modelagem.
+
+Arquivos analisados:
+- C:/Users/SCCP Bruno/Downloads/A_TRABALHO FINAL EPS7002.pdf
+- Pasta raiz Faculdade: sem arquivos existentes na inspeção inicial.
+
+Arquivos alterados:
+- .codex (criado).
+
+O que foi feito:
+- Identificados dois estudos obrigatórios: modelo de filas de espera e modelo de simulação, com características e dados reais, analisados em diferentes cenários.
+- Dados indicados: tempos de chegada e atendimento, número de atendentes, períodos críticos e turnos. Indicadores: tempos e quantidades médias na fila e no sistema, taxas de chegada e atendimento.
+- Registrado prazo de 06/11/2026 para resumo com nome do aluno no Recurso Tarefa: Resumo do Trabalho Final e na Wiki Colaborativa: Trabalho Final.
+- Registradas datas de apresentação de 01/12/2026 e 04/12/2026, com todos os arquivos enviados no dia da apresentação; lista de apresentações ainda a definir segundo o enunciado.
+- Registrada estrutura recomendada: Introdução Teórica, Descrição dos Dados, Descrição do Modelo, Análise e Resultados e Bibliografia Utilizada; formato livre e ferramentas computacionais permitidas.
+- Identificada declaração de uso de IA na página 2, a ser preenchida conforme as contribuições efetivas.
+- Identificada ambiguidade na exigência de pelo menos o triplo de atividades/recursos ao reaproveitar o sistema na simulação; confirmar como o professor contabiliza essa ampliação.
+- Ideias preliminares, condicionadas ao acesso aos dados: lanchonete/cafeteria (caixa e fluxo completo), copiadora (balcão e fluxo de produção/entrega), mercado (caixas e sistema ampliado).
+- Proposta de pergunta de pesquisa: como mudanças na capacidade e organização do atendimento afetam espera e utilização dos recursos?
+- Cuidados metodológicos: não inventar observações, não escolher distribuições ou modelo de filas antes de examinar dados e materiais da disciplina, e distinguir cenários simulados de dados observados.
+
+Motivo:
+- Fixar as exigências, priorizar a entrega do resumo e evitar escolher um sistema cuja coleta ou ampliação seja inviável.
+
+Próximos passos sugeridos:
+- Etapa 2: escolher local acessível, verificar slides do Moodle e esclarecer a regra do triplo de atividades/recursos; elaborar resumo dos dois temas até 06/11.
+- Etapa 3: mapear fluxo e preparar ficha de coleta; realizar coleta piloto e ajustar o protocolo.
+- Etapa 4: coletar e organizar dados reais; verificar períodos de demanda, distribuições e hipóteses dos modelos.
+- Etapa 5: calcular o modelo de filas, construir e validar a simulação e comparar cenário atual com alternativas.
+- Etapa 6: redigir relatório, registrar fontes e uso de IA, preparar apresentação e revisar arquivos para a data designada.
+- Cronograma inicial proposto: até 06/11 temas e resumo; 07 a 15/11 coleta; 16 a 22/11 modelagem e validação; 23 a 29/11 relatório e apresentação; 30/11 revisão para ficar pronto antes da primeira data.
+
+### 2026-11-02 22:51 -03:00
+Tarefa solicitada:
+- Explicar como usar os dados coletados para chegar aos resultados e avaliar a ideia de uma aplicação simples para apoiar os cálculos e a simulação.
+
+Etapa executada:
+- Etapa 2: orientação metodológica e proposta inicial de escopo da ferramenta, sem implementação e sem decisão definitiva de tecnologia.
+
+Arquivos analisados:
+- .codex
+- Requisitos do enunciado já analisados na etapa anterior.
+
+Arquivos alterados:
+- .codex
+
+O que foi feito:
+- Proposta uma aplicação local simples, limitada ao sistema escolhido, para carregar dados, calcular indicadores, executar o modelo adequado e comparar cenários.
+- Explicada a distinção entre indicadores observados diretamente, estimativas por fórmulas de filas e resultados de simulação.
+- Proposta coleta de horários de chegada, início e fim de atendimento, identificação anônima do atendimento e recurso utilizado; na rede simulada, registrar também as etapas e seus recursos.
+- Definido uso de dados fictícios identificados exclusivamente para testes e cenários hipotéticos; estudo de caso final apoiado em dados reais.
+- Indicada validação de cálculos com exemplos de resultado conhecido e validação do cenário atual da simulação contra observações, antes de comparar alternativas.
+- Exemplo didático hipotético M/M/1: lambda 12 clientes/h, mu 15 clientes/h, utilização 80%, espera média teórica 16 minutos e tempo médio teórico no sistema 20 minutos, condicionado às hipóteses e ao regime estável.
+- Reforçado que uma calculadora de filas sozinha não realiza a parte de simulação; esta precisa representar eventos, atividades e recursos do fluxo exigido, com repetições e avaliação de variabilidade.
+
+Motivo:
+- Tornar claro como os dados sustentam a análise e evitar que o desenvolvimento da ferramenta substitua o estudo acadêmico ou cresça além do necessário.
+
+Próximos passos sugeridos:
+- Escolher o sistema real, consultar os modelos e ferramentas ensinados no Moodle e esclarecer a ampliação de atividades/recursos.
+- Definir a ficha de coleta e o escopo mínimo da aplicação antes de escrever código.
+
+### 2026-11-03 16:13 -03:00
+Tarefa solicitada:
+- Avançar com uma página hospedada localmente, com front-end e back-end, controles de variáveis e comparação de cenários, apresentada como protótipo de produto para empresas no trabalho acadêmico.
+
+Etapa executada:
+- Etapa 3: definição documentada do escopo mínimo e estrutura técnica, antes da implementação.
+
+Arquivos analisados:
+- .codex
+- Pasta Faculdade (somente histórico existente antes desta etapa).
+
+Arquivos alterados:
+- ESCOPO.md (criado).
+- .codex (atualizado).
+
+O que foi feito:
+- Documentada proposta de HTML/CSS/JavaScript com back-end Python local, inicialmente sem dependências externas.
+- Delimitadas áreas de dados, cenários e resultados, com importação/exportação, entrada manual e indicadores de origem explícita.
+- Definida semântica dos controles de demanda, duração de serviço e capacidade; reforçado que aumento de demanda não implica aumento proporcional da espera.
+- Registrados critérios de validação, estabilidade das fórmulas, repetições da simulação e preservação de dados reais.
+- Separadas etapas futuras e decisões pendentes sobre o sistema e a disciplina.
+
+Motivo:
+- Converter a ideia em um plano revisável, mantendo o escopo acadêmico e evitando implementar modelos inadequados ao caso real.
+
+Próximos passos sugeridos:
+- Definir o estabelecimento e seu fluxo e então preparar a base local da aplicação e a ficha de coleta.
+- Não há código executável nesta etapa; implementação e testes ocorrerão nas etapas correspondentes.
+
+### 2026-11-03 16:39 -03:00
+Tarefa solicitada:
+- Começar o desenvolvimento da página local para o mercado, gerar um CSV fictício do pico e fornecer todos os dados necessários para a coleta real da dupla.
+
+Etapa executada:
+- Etapa 4: primeira versão funcional e revisável da aplicação local, com dados de teste e protocolo de coleta.
+
+Arquivos analisados:
+- ESCOPO.md
+- .codex
+- Arquivos criados nesta etapa, CSV gerado e exportação de cenários verificada.
+
+Arquivos alterados:
+- server.py (criado)
+- filas.py (criado)
+- static/index.html (criado)
+- static/style.css (criado)
+- static/app.js (criado)
+- dados/mercado_pico_FICTICIO.csv (criado)
+- dados/modelo_coleta.csv (criado)
+- GUIA_COLETA.md (criado)
+- README.md (criado)
+- iniciar.ps1 (criado)
+- test_filas.py (criado)
+- .gitignore (criado)
+- output/previa.png (criado)
+- ESCOPO.md (atualizado)
+- .codex (atualizado)
+
+O que foi feito:
+- Criada interface responsiva em português, com indicadores, gráfico de chegadas, dados, cenários e explicação dos métodos.
+- Criado servidor Python local em 127.0.0.1:7002 sem dependências externas de execução, com validação de entrada e acesso restrito aos arquivos públicos da aplicação.
+- Implementados indicadores observados por coorte de chegadas e áreas temporais limitadas à janela, fórmula M/M/c com tratamento de sobrecarga e simulação FIFO de caixas com 30 repetições, chegadas Poisson constantes e reamostragem de serviços.
+- Implementadas edição/importação/exportação de CSV, formulário manual, nova coleta vazia, cenários nomeados, variações de demanda/duração/capacidade, indicação de resultados pendentes e confirmação na página antes de substituir alterações.
+- Gerados 78 atendimentos FICTICIOS para 03/11/2026, janela 17:30–19:00, dois caixas e fila única; registros finais acompanhados até o término. CSV com BOM UTF-8 e ponto e vírgula, preparado via Artifact Tool e conferido por leitura/renderização.
+- Preparados cabeçalho vazio, guia de campo com dicionário de dados e metadados, cuidados com clientes iniciais/finais, filas independentes, disponibilidade de caixas e dados necessários para futura simulação ampliada.
+- Verificação: seis testes unitários aprovados; JavaScript verificado por node --check; rotas HTTP, análise do CSV e rejeições 400/403 conferidas.
+- Verificação no navegador: demonstração de 78 registros carregada, cenário adicional com serviço mais rápido calculado, formulário manual validado com 79 registros e primeira inclusão numa coleta vazia validada com um registro. Exemplo original restaurado ao final.
+- Download de resultados comparativos conferido: três cenários exportados com origem FICTICIO e 30 repetições. Exportação de teste salva pelo navegador em Downloads/comparacao_cenarios.csv.
+- Layout conferido no navegador padrão e em largura de 390 px; viewport temporário restaurado. Console final sem erros. Prévia final salva em output/previa.png; aba mantida aberta como entrega.
+- Servidor local mantido na sessão de execução 71323 para revisão; README e iniciar.ps1 explicam como reiniciar.
+
+Motivo:
+- Permitir testar a experiência completa antes da coleta real e fornecer um protocolo que gere dados utilizáveis, sem confundir demonstração fictícia com evidência de campo.
+
+Próximos passos sugeridos:
+- Revisar a primeira versão e o guia com a dupla antes da pesquisa.
+- Confirmar no mercado se há fila única ou filas separadas, prioridades e mudanças de capacidade; adaptar o modelo se necessário.
+- Após a coleta, verificar hipóteses e validar os modelos com observações. A simulação ampliada exigida no item B ainda depende do fluxo real e da interpretação do professor sobre o triplo de atividades/recursos.
+- Exporte a coleta para preservar alterações: ainda não há salvamento automático nem banco de dados.
+
+### 2026-11-03 16:57 -03:00
+Tarefa solicitada:
+- Tornar o aplicativo um gestor genérico de filas, usar Angelone como nome do exemplo e adicionar pessoas animadas com controles de reprodução.
+
+Etapa executada:
+- Etapa 5: identidade genérica da interface, identificação de operação no CSV e reprodução visual vinculada aos dados e aos cenários.
+
+Arquivos analisados:
+- static/index.html, static/app.js, filas.py, server.py, test_filas.py, README.md, ESCOPO.md e CSV anterior.
+
+Arquivos alterados:
+- static/index.html
+- static/app.js
+- static/replay.js (criado)
+- static/replay.css (criado)
+- filas.py
+- server.py
+- test_filas.py
+- dados/Angelone_pico_FICTICIO.csv (criado)
+- dados/modelo_coleta.csv
+- README.md
+- GUIA_COLETA.md
+- ESCOPO.md
+- output/previa_fluxo.png (criado)
+- .codex
+
+O que foi feito:
+- Marca Fluxo — Gestor de filas e textos genéricos de operação/postos; nome da operação extraído da coluna opcional estabelecimento, preservada na API e nas exportações.
+- Criado CSV Angelone com 78 registros fictícios, preservando IDs, horários, caixas, fila e origem do teste anterior. CSV anterior mantido: tentativa de edição retornou EBUSY (arquivo bloqueado).
+- Adicionada reprodução SVG da coleta e da primeira execução de cada cenário, com relógio, contadores, início/pausa, reinício, velocidade e linha do tempo.
+- Motor retorna horários e posto de cada pessoa na execução 1, sem alterar médias das 30 repetições. Deslocamentos visuais são ilustrativos, estados seguem os horários. Limite visual de 30 pessoas esperando com indicação de excedentes.
+- Sem autoplay; pausa quando a aba é ocultada e invalida reprodução ao editar dados/cenários. Transições de transform/opacity com 240/200ms e respeito a movimento reduzido.
+- Validação: sete testes unitários aprovados, incluindo causalidade e exclusividade de postos nos eventos; sintaxe dos dois scripts aprovada; API e recursos HTTP conferidos; CSV comparado com original para preservar os tempos.
+- Navegador: operação Angelone reconhecida, reprodução da coleta e de cenário exercitadas, relógio avançou ao iniciar e parou ao pausar; fim da coleta exibiu 78 saídas e zero pessoas em fila/atendimento; reinício voltou a zero. Console sem erros observados. Prévia salva e aba mantida para revisão.
+- Servidor reiniciado na sessão 55545, mantendo http://127.0.0.1:7002.
+
+Motivo:
+- Separar produto e estudo de caso e explicar o comportamento das filas visualmente, com movimento ligado aos cálculos em vez de uma animação aleatória de fundo.
+
+Próximos passos sugeridos:
+- Revisar a área Fila em movimento e comparar cenários usando o seletor.
+- Confirmar o fluxo real do mercado antes de ampliar o modelo matemático para filas independentes ou outras atividades.
+- A interface genérica continua limitada a uma fila FIFO e postos equivalentes; parte B ampliada permanece pendente do estudo real.
+
+### 2026-11-03 17:10 -03:00
+Tarefa solicitada:
+- Limpar a página inicial para mostrar somente a entrada de CSV, exibir configurações após o envio, separar quantidades convencionais e autoatendimento e organizar visualmente atendentes em cima e totens embaixo.
+
+Etapa executada:
+- Etapa 6: reformulação do fluxo importar → configurar → analisar, com capacidade e tempos por tipo de recurso.
+
+Arquivos analisados:
+- static/index.html, static/app.js, static/replay.js, static/style.css, filas.py, server.py, test_filas.py e documentação existente.
+
+Arquivos alterados:
+- static/index.html
+- static/app.js
+- static/style.css
+- static/replay.js
+- filas.py
+- server.py
+- test_filas.py
+- README.md
+- GUIA_COLETA.md
+- ESCOPO.md
+- output/previa_importacao.png (criado)
+- output/previa_caixas_totens.png (criado)
+- .codex
+
+O que foi feito:
+- Removido carregamento automático do exemplo; início sem sidebar, gráficos, indicadores ou resultados, com botão de envio de CSV.
+- Criada inspeção segura de CSV antes da análise, seguida de configuração da capacidade, classificação explícita dos IDs e janela real de observação. Horários sugeridos identificados como sugestões a corrigir.
+- Configuração com prévia dinâmica dos convencionais e totens, período e opções secundárias. Hipótese relativa obrigatória quando um tipo utilizado não possui amostra; não atribui ganho de desempenho automaticamente.
+- Painel visível somente após análise bem-sucedida. Botão Configurar operação permite revisar as entradas. Cenários variam convencionais e totens separadamente.
+- Reprodução ordena convencionais acima e totens abaixo, com operador e máquina desenhados e identificação dos recursos observados. Horários continuam vinculados aos dados ou à execução real do motor.
+- Simulação utiliza durações por tipo. Tipos sem amostra usam apenas razão explícita informada. Fórmula M/M/c fica não aplicável quando os dois tipos estão ativos.
+- Mantida hipótese de fila única FIFO, todos elegíveis para ambos os tipos e recursos disponíveis continuamente; auxílio compartilhado aos totens não modelado.
+- CSVs originais preservados sem novas colunas obrigatórias. Classificação é configuração da sessão e não se torna observação real.
+- README revisado para refletir o fluxo atual e limites; guia e escopo atualizados.
+- Validação: 11 testes unitários aprovados (incluindo recursos heterogêneos, classificação/capacidade e falta de amostra); sintaxe dos scripts aprovada.
+- Navegador: tela inicial sem dados confirmada; importação real do arquivo fictício pelo seletor; configuração de 2 convencionais + 2 totens com hipótese explícita de 120% exercitada; painel e cenário adicional calculados; desenho com ambos os tipos conferido.
+- Teste adicional de classificação de C2 como totem foi apenas exercício da interface, sem alterar CSV. Recurso sem amostra tornou a hipótese obrigatória; classificação de ambos os tipos com amostras retirou a obrigação. Reprodução temporal e console sem erros conferidos.
+- Tela inicial conferida em 390 px; viewport restaurado. Página deixada vazia e pronta para o usuário importar, com prévias salvas.
+- Servidor local reiniciado na sessão 80763, em http://127.0.0.1:7002.
+
+Motivo:
+- Reduzir ruído antes da entrada de dados e permitir configuração clara e verificável da infraestrutura, diferenciando caixas com operador e autoatendimento nos cálculos e na visualização.
+
+Próximos passos sugeridos:
+- Revisar o fluxo importando o CSV de exemplo, conferir a janela 17:30–19:00 e informar capacidades reais ou hipóteses de teste explicitamente.
+- Coletar tempos de cada tipo real antes de recomendar mudanças. Se há filas separadas, elegibilidade ou funcionário de auxílio compartilhado, adaptar o modelo antes de usar os resultados no trabalho.
+- A simulação ampliada da parte B e a validação com observações reais permanecem para as etapas acadêmicas posteriores.
+
+### 2026-11-03 17:22 -03:00
+Tarefa solicitada:
+- Ampliar e tornar mais variada a massa Angeloni de teste, retirar fictício do nome e dos avisos repetidos e testar filas grandes. Usuário corrigiu a configuração durante a etapa: 4 convencionais + 6 totens, sem rápidos, total 10 postos.
+
+Etapa executada:
+- Etapa 7: nova massa sintética de carga e importação de metadados declarados, preservando a identificação da origem gerada.
+
+Arquivos analisados:
+- filas.py, server.py, static/index.html, static/app.js, static/replay.js, test_filas.py, CSVs anteriores e gerador de teste temporário.
+
+Arquivos alterados:
+- dados/Angeloni_pico.csv (criado)
+- dados/Angeloni_pico_metadados.json (criado)
+- filas.py
+- server.py
+- static/index.html
+- static/app.js
+- static/replay.js
+- test_filas.py
+- README.md
+- GUIA_COLETA.md
+- ESCOPO.md
+- output/previa_teste_carga.png (criado)
+- .codex
+
+O que foi feito:
+- Gerados 968 atendimentos, quatro caixas C01–C04 e seis totens A01–A06, chegadas de 16:00 a 19:00 em 03/11/2026. Última saída às 20:38:29. Todos os registros são SINTETICO, nunca REAL.
+- Semente 731026; chegadas Poisson por seis blocos de meia hora, taxas planejadas 160/260/420/460/380/180 por hora. Serviços por tipo e itens, variação lognormal e interrupções ocasionais. Fila única FIFO, capacidade constante e início vazio.
+- Teste intencionalmente severo: fila máxima 353, média temporal de 154,91, espera média da coorte 45,39 minutos e 347 pessoas ainda no sistema às 19h. Não é estimativa empírica do Angeloni.
+- Novo nome de arquivo sem fictício; corrigida identificação da operação para Angeloni. Interface apresenta Dados de teste e Teste gerado, sem ocultar a procedência.
+- Colunas opcionais tipo_caixa, itens, inicio_observacao e fim_observacao preservadas e devolvidas pela API. Inspeção valida consistência de tipo por ID e oferece tipos e janela declarados para revisão na configuração.
+- Identificação de postos ficou em detalhe expansível para manter limpa a configuração com dez IDs. Sem carregamento automático do arquivo.
+- Arquivos de teste anteriores preservados. CSV criado via Artifact Tool, conferido por inspeção, renderização e validação pelo próprio parser.
+- Verificação: 12 testes unitários aprovados, incluindo contagens, 4/6 tipos, origem sintética, janela de 180 minutos, fila grande e consistência de tipos. Sintaxe dos scripts aprovada.
+- Navegador: importação de Angeloni_pico.csv preencheu automaticamente 4 convencionais/6 totens e 16:00–19:00, calculou 968 registros, indicou origem de teste sem fictício e reproduziu instante com 214 pessoas na fila e 10 atendimentos. Console sem erros observados; prévia salva e aba mantida aberta.
+- Servidor atualizado na sessão 49883, em http://127.0.0.1:7002.
+
+Motivo:
+- Exercitar o aplicativo sob carga maior, com tempos variados e filas longas, sem atribuir dados inventados a uma pesquisa de campo.
+
+Próximos passos sugeridos:
+- Revisar o teste de carga na página e comparar cenários antes da coleta.
+- Se desejar um pico moderado, gerar outra massa separada: a atual testa sobrecarga, não movimento típico calibrado do estabelecimento.
+- O motor ainda supõe chegadas constantes por cenário; esta massa tem intensidade variável. Diferenças entre reprodução e médias simuladas precisam ser explicadas e validadas com a pesquisa real.
+
+### 2026-11-03 17:26 -03:00
+Tarefa solicitada:
+- Substituir os símbolos da distribuição dos postos pelos desenhos de atendente e totem apresentados nas imagens do usuário.
+
+Etapa executada:
+- Etapa 8: troca visual pontual dos ícones da configuração.
+
+Arquivos analisados:
+- static/app.js
+- static/style.css
+- static/replay.js (desenhos existentes usados como referência)
+- Imagens anexadas pelo usuário.
+
+Arquivos alterados:
+- static/app.js
+- static/style.css
+- output/previa_icones.png (criado)
+- .codex
+
+O que foi feito:
+- Substituídos caracteres Unicode de peão/quadrado por SVGs de atendente e totem com as mesmas formas e cores usadas na reprodução visual.
+- Ajustado tamanho dos SVGs para preservar os cartões, a numeração e a quebra responsiva.
+- Verificação: node --check aprovado; CSV de teste importado no navegador, 10 SVGs conferidos (4 atendentes e 6 totens), aparência verificada e prévia salva. Sem mudanças nos cálculos ou dados; testes do back-end não repetidos por ser alteração apenas visual.
+
+Motivo:
+- Atender à referência visual e manter consistência entre configuração e reprodução.
+
+Próximos passos sugeridos:
+- Revisar os novos ícones na área Distribuição dos postos.
+
+### 2026-11-03 17:38 -03:00
+Tarefa solicitada:
+- Corrigir postos extras ociosos na reprodução, simplificar CSV para tipo convencional/autoatendimento e recalcular impacto de capacidade para apoiar decisão.
+
+Etapa executada:
+- Etapa 9: distribuição calculada por tipo, projeção com chegadas/durações fixas e novos CSVs por modalidade.
+
+Arquivos analisados:
+- filas.py, server.py, static/app.js, static/index.html, static/replay.js, testes e dados do teste Angeloni.
+
+Arquivos alterados:
+- filas.py
+- server.py
+- static/app.js
+- static/index.html
+- static/replay.js
+- test_filas.py
+- dados/Angeloni_pico_por_tipo.csv (criado)
+- dados/modelo_coleta_por_tipo.csv (criado)
+- README.md
+- GUIA_COLETA.md
+- ESCOPO.md
+- output/previa_decisao.png (criado)
+- .codex
+
+O que foi feito:
+- Identificada causa: reprodução literal dos IDs/horários originais mantinha recursos adicionais sem dados. Substituída visualização inicial por projeção que redistribui todas as chegadas entre os postos do tipo escolhido.
+- Convencionado caixa=C para convencional e caixa=CA para autoatendimento, sem ID físico obrigatório. Tipos admitem atendimentos simultâneos; IDs legados ainda têm sobreposição validada.
+- CSV novo conserva IDs de clientes, horários, origem sintética e nome; agrega a identificação física a C/CA. Capacidades históricas 4/6 são metadados opcionais sugeridos na configuração. Anteriores preservados.
+- Implementado escalonamento FIFO dentro de cada modalidade, conservando chegadas e durações. Não presume mudança de modalidade, nem atendimento compartilhado.
+- Adicionado resultado de espera projetada versus observada no topo e coluna Espera redistribuída. Observado fica fixo; ocupação histórica retirada para não usar capacidade projetada como medição da coleta.
+- Simulação Poisson sorteia modalidades nas proporções da coleta, tempos por modalidade e usa o mesmo distribuidor. Demanda afeta simulação aleatória; projeção fixa conserva a coorte e varia capacidade/duração.
+- Removidos rótulos sem dados na reprodução inicial; todos os postos configurados podem receber clientes. Exportação inclui espera observada e redistribuída.
+- Validação: 13 testes aprovados, incluindo reprodução da espera original em 4/6, monotonicidade para adições 6/6, 4/8, 6/8, uso de todos os postos e respeito ao tipo C/CA. Scripts passaram node --check.
+- Resultado da massa gerada: 4/6=45,39 min; 6/6=36,49 min; 4/8=29,21 min; 6/8=20,31 min. Observado 45,39 min em todos; redução 25,08 min em 6/8.
+- Navegador: importação do novo CSV, baseline 4/6 e edição para 6/8 conferidas. Reprodução mostrou 14 pessoas sendo atendidas simultaneamente, sem erros de console. Prévia salva e versão nova deixada em aba de entrega para preservar a configuração antiga.
+- Servidor reiniciado na sessão 96296.
+
+Motivo:
+- Fazer mudanças de capacidade alterarem os atendimentos e os resultados da visualização principal, sem reescrever observações reais.
+
+Próximos passos sugeridos:
+- Usar o novo modelo C/CA na coleta, incluindo chegada, início e fim e capacidade histórica por tipo.
+- Validar a projeção contra o sistema real antes de recomendar mudanças; escolhas de modalidade e funcionário de apoio ainda não modelados.
+- Simulação ampliada da parte B permanece dependente do fluxo e orientações do professor.
+
+### [2026-11-03 17:47 -03:00]
+Tarefa solicitada:
+- Compactar a visualização da fila para mostrar todos os caixas sem reduzir excessivamente o zoom.
+
+Etapa executada:
+- Reorganização visual dos postos em grade responsiva e validação no navegador.
+
+Arquivos analisados:
+- static/replay.js
+- static/replay.css
+
+Arquivos alterados:
+- static/replay.js
+- static/replay.css
+- output/previa_grade.png
+- .codex
+
+O que foi feito:
+- Distribuição em três colunas nas áreas com pelo menos 900 px disponíveis e duas nas menores; convencionais acima e totens abaixo.
+- Altura calculada por linhas, rótulos maiores e posições dos clientes adaptadas aos postos.
+- Espaçamento dos clientes na espera ajustado, com limite visual proporcional à altura e contador dos demais.
+- Redimensionamento preserva o horário da reprodução.
+- Verificação de sintaxe JavaScript aprovada; navegador validado em 1024x768 e 1440x900 com 6 convencionais e 8 totens, inclusive 14 atendimentos simultâneos e fila de 84 clientes. Sem erros de console na conferência.
+
+Motivo:
+- A coluna única anterior tornava o desenho muito alto e exigia zoom reduzido para visualizar os postos.
+
+Próximos passos sugeridos:
+- Revisar a simulação no zoom normal usando a configuração desejada da operação.
+
+### [2026-11-03 17:55 -03:00]
+Tarefa solicitada:
+- Adicionar controles interativos para incluir ou remover caixas convencionais e de autoatendimento, mantendo a digitação direta.
+
+Etapa executada:
+- Inclusão dos botões de ajuste na configuração da distribuição dos postos.
+
+Arquivos analisados:
+- static/index.html
+- static/app.js
+- static/style.css
+
+Arquivos alterados:
+- static/app.js
+- static/style.css
+- output/previa_controles_postos.png
+- .codex
+
+O que foi feito:
+- Adicionados botões − e + à direita de cada grupo de postos.
+- Os botões atualizam o campo numérico e os ícones imediatamente.
+- A remoção preserva ao menos um posto e a adição respeita o limite total de 20.
+- A digitação direta dos campos numéricos foi preservada.
+- Validação no navegador com adição e remoção de autoatendimento, sem erros de sintaxe no JavaScript.
+
+Motivo:
+- Tornar a configuração de capacidade mais visual e rápida para explorar cenários.
+
+Próximos passos sugeridos:
+- Usar os controles para montar a configuração que será comparada com os dados coletados no mercado.
+
+### [2026-11-03 17:56 -03:00]
+Tarefa solicitada:
+- Remover o aviso que identificava a massa de dados de teste no painel.
+
+Etapa executada:
+- Remoção do componente de aviso e da lógica que montava seu conteúdo.
+
+Arquivos analisados:
+- static/index.html
+- static/app.js
+
+Arquivos alterados:
+- static/index.html
+- static/app.js
+- output/previa_sem_aviso.png
+- .codex
+
+O que foi feito:
+- Removido o banner de origem dos dados da visão geral.
+- Removida a função que avaliava a origem para preencher o aviso.
+- Validado no navegador: o painel abre sem o componente e mantém os resultados.
+
+Motivo:
+- O aviso não deve mais fazer parte da experiência da aplicação.
+
+Próximos passos sugeridos:
+- Conferir o fluxo completo após importar os dados reais da coleta.
+
+### [2026-11-03 — diagnóstico dos indicadores]
+Tarefa solicitada:
+- Explicar por que os cartões não mudam ao adicionar postos e o que falta para apoiar decisões de capacidade.
+
+Etapa executada:
+- Inspeção do vínculo dos cartões e execução de comparações no cálculo existente.
+
+Arquivos analisados:
+- static/app.js
+- filas.py
+- test_filas.py
+- dados/Angeloni_pico_por_tipo.csv
+
+Arquivos alterados:
+- .codex
+
+O que foi feito:
+- Confirmado que os cartões usam observed, enquanto o resumo usa scenarios[0].projection.
+- Verificado: 4C/6CA = 45,39 min; 5C/6CA = 39,77 min; 4C/7CA = 35,57 min; 6C/8CA = 20,31 min de espera projetada.
+- Identificada a preservação do tipo original como limitação para testar uma modalidade inexistente na coleta.
+
+Motivo:
+- Distinguir a apresentação de dados históricos do cálculo de cenários e esclarecer as funcionalidades faltantes.
+
+Próximos passos sugeridos:
+- Exibir indicadores projetados em destaque e comparar com a coleta.
+- Configurar adesão e duração de atendimento para modalidades novas; acrescentar custos se a comparação incluir retorno financeiro.
+
+### [2026-11-03 — cartões da configuração]
+Tarefa solicitada:
+- Destacar o cenário configurado nos cartões principais e comparar a espera com a coleta.
+
+Etapa executada:
+- Atualização dos indicadores e validação visual com duas capacidades.
+
+Arquivos analisados:
+- filas.py
+- static/app.js
+- static/index.html
+
+Arquivos alterados:
+- static/app.js
+- static/index.html
+- output/previa_indicadores_projetados.png
+- .codex
+
+O que foi feito:
+- Cartões exibem espera, fila média, tempo no sistema e concluídos da projeção da configuração, com referências da coleta.
+- Espera mostra redução ou aumento em minutos e percentual; comparação igual mostra sem alteração.
+- Título e descrição acessível identificam os indicadores como projetados.
+- JavaScript validado; navegador confirmou 6C/8CA com espera de 20,31 min e redução de 55,26%, e 4C/6CA com 45,39 min sem alteração. Sem erros de console.
+
+Motivo:
+- Destacar o efeito da capacidade escolhida nos indicadores principais.
+
+Próximos passos sugeridos:
+- Comparar capacidades usando Configurar operação e Analisar e abrir painel.
+
+### [2026-11-25 — backup para GitHub]
+Tarefa solicitada:
+- Salvar o projeto em brunojordaodecastro/trabalho_prob antes da formatação do computador.
+
+Etapa executada:
+- Inventário, preparação das instruções de restauração e envio dos arquivos disponíveis ao GitHub.
+
+Arquivos analisados:
+- Código Python, static/, dados/, output/, documentação e histórico.
+
+Arquivos alterados:
+- README.md
+- .gitignore
+- .codex
+
+O que foi feito:
+- Documentada restauração com Python 3.10+, sem dependências de pacotes ou do Codex.
+- Corrigida a referência à massa de teste disponível no README.
+- Excluídos do versionamento caches, ambientes virtuais e arquivos .env.
+- Testes: 8 aprovados; 5 com erro por ausência anterior de dois CSVs legados. O CSV atual e seu teste de redistribuição estão disponíveis.
+
+Motivo:
+- Permitir recuperar o projeto e seus arquivos presentes após a formatação.
+
+Próximos passos sugeridos:
+- Conferir os arquivos no GitHub; exportar coletas abertas e guardar separadamente fotos/documentos fora da pasta do projeto.

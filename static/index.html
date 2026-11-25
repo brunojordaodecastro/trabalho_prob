@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluxo · Gestor de filas</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script><script src="/replay.js" defer></script><link rel="stylesheet" href="/replay.css">
+</head>
+<body class="import-step">
+  <aside class="sidebar">
+    <a class="brand" href="#visao"><span class="brand-symbol" aria-hidden="true">≋</span><span>fluxo<span class="brand-light">gestor de filas</span></span></a>
+    <p class="nav-label">ESPAÇO DE ANÁLISE</p>
+    <nav aria-label="Navegação principal">
+      <a href="#visao"><span aria-hidden="true">◫</span> Visão geral</a>
+      <a href="#visual"><span aria-hidden="true">▷</span> Fila em movimento</a>
+      <a href="#cenarios"><span aria-hidden="true">⇄</span> Cenários</a>
+      <a href="#coleta"><span aria-hidden="true">▤</span> Dados da coleta</a>
+      <a href="#metodo"><span aria-hidden="true">ⓘ</span> Como calculamos</a>
+    </nav>
+    <div class="sidebar-bottom"><span class="local-dot"></span> Ambiente local<p>Probabilidade e Modelos<br>Estocásticos · EPS7002</p><small>Protótipo acadêmico / v0.1</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>Operação selecionada <span class="slash">/</span> <strong id="operation-name">Nova análise</strong><button id="edit-config" class="button secondary" type="button">Configurar operação</button></span><span class="tag">ANÁLISE DE ATENDIMENTO</span></header>
+    <section id="import-screen" class="import-screen">
+      <div class="import-brand">≋ fluxo</div><h1>Sua próxima análise<br>começa com os dados.</h1>
+      <p>Envie um CSV para configurar a operação e visualizar suas filas.</p>
+      <label class="file-label upload-button">↑ Enviar arquivo CSV<input id="csv-file" type="file" accept=".csv,text/csv"></label>
+    </section>
+    <div id="notice" class="notice" role="status" aria-live="polite"></div>
+    <section id="setup-screen" class="setup-screen" hidden>
+      <p class="eyebrow">CONFIGURE SUA ANÁLISE</p><h1>Como funciona o atendimento?</h1><p id="setup-file" class="muted"></p>
+      <form id="setup-form">
+        <div class="setup-grid"><article class="panel"><h3>Capacidade da operação</h3>
+          <div class="setup-inputs"><label>Caixas convencionais<input id="normal-cashiers" type="number" min="0" max="20" step="1" value="1" required></label><label>Caixas de autoatendimento<input id="self-cashiers" type="number" min="0" max="20" step="1" value="0" required></label></div>
+          <input id="cashiers" type="hidden" value="1"><p class="muted small">De 1 a 20 postos no total, disponíveis durante toda a janela.</p>
+          <h3>Identifique os postos do CSV</h3><p class="muted small">C indica convencional e CA indica autoatendimento. A distribuição física é calculada pelo aplicativo.</p><details><summary>Conferir identificação dos postos</summary><div id="station-mapping"></div></details>
+        </article><article class="panel"><h3>Distribuição dos postos</h3><div id="setup-layout" class="setup-layout" aria-live="polite"></div></article></div>
+        <article class="panel"><h3>Período observado</h3><p id="window-hint" class="muted small">Os horários abaixo são sugeridos pelos registros. Corrija para o início e fim reais da coleta, incluindo intervalos sem chegadas.</p>
+          <div class="setup-inputs"><label>Início da observação<input id="start" type="datetime-local" step="1" required></label><label>Fim das chegadas observadas<input id="end" type="datetime-local" step="1" required></label></div>
+          <details class="setup-options"><summary>Hipóteses e opções da simulação</summary><div class="setup-inputs"><label>Duração do totem (% da convencional)<input id="self-ratio" type="number" min="10" max="500" step="1" placeholder="Informe se faltar amostra de um tipo"></label><label>Semente da simulação<input id="seed" type="number" min="0" max="1000000" step="1" value="7002" required></label></div>
+          <p class="muted small">Se um tipo não tem tempos observados, informe a duração relativa como hipótese. Ex.: 120 significa que o totem demora 20% mais. Com amostra de ambos, usamos as durações de cada tipo.</p></details>
+          <p class="muted small">Modelo desta versão: fila única por ordem de chegada, tipo de atendimento preservado, sem migração entre C e CA. Totens não disputam um funcionário de apoio.</p>
+        </article><div class="setup-actions"><button id="replace-file" type="button" class="button secondary">Escolher outro CSV</button><button id="setup-submit" type="submit" class="button primary">Analisar e abrir painel →</button></div>
+      </form>
+    </section>
+    <div id="dashboard" hidden>
+    <section id="visao" class="section">
+      <div class="page-heading"><div><p class="eyebrow">GESTÃO DE ATENDIMENTO</p><h1>Entenda a fila.<br><span>Explore as possibilidades.</span></h1><p class="muted">Da coleta ao cenário: veja o impacto das decisões no atendimento.</p></div><button id="export-results" class="button secondary" disabled>Exportar resultados ↓</button></div>
+      <p id="decision-summary" class="insight" aria-live="polite"></p>
+      <div class="section-title"><h2>Resultado da configuração</h2><span class="badge">PROJEÇÃO COM OS DADOS DA COLETA</span></div>
+      <div id="metrics" class="metrics" aria-label="Indicadores projetados para a configuração escolhida" aria-live="polite"></div>
+      <div class="overview-grid">
+        <article class="panel"><div class="panel-heading"><div><h3>Chegadas ao longo do período</h3><p>Clientes por intervalo de até 10 minutos</p></div><span class="legend"><i></i> Chegadas</span></div><div id="arrival-chart" class="arrival-chart" role="img" aria-label="Aguardando análise"></div><div id="period-caption" class="chart-caption"></div></article>
+        <article class="panel operation"><span class="eyebrow">CONFIGURAÇÃO DA COLETA</span><h3>Uma fila, vários postos.</h3><p class="muted">Para esta versão, cada cliente mantém o tipo C ou CA observado e é distribuído por ordem de chegada entre os postos desse tipo.</p><div class="flow"><span>Clientes</span><b aria-hidden="true">→</b><span>Fila única</span><b aria-hidden="true">→</b><span>Postos</span></div><dl id="operation-details"></dl></article>
+      </div>
+    </section>
+    <section id="visual" class="section">
+      <div class="section-title"><div><p class="eyebrow">VEJA O ATENDIMENTO ACONTECER</p><h2>Fila em movimento</h2></div><span class="badge">REPRODUÇÃO CONTROLADA</span></div>
+      <article class="panel replay-panel">
+        <div class="replay-controls"><label>O que visualizar<select id="replay-source" disabled><option>Carregando dados…</option></select></label><label>Velocidade<select id="replay-speed"><option value="0.25">15 segundos por segundo</option><option value="1" selected>1 minuto por segundo</option><option value="3">3 minutos por segundo</option></select></label><div class="button-group"><button id="replay-play" class="button primary" disabled>▶ Iniciar</button><button id="replay-reset" class="button secondary" disabled>↺ Reiniciar</button></div></div>
+        <p id="replay-description" class="muted small">Escolha a coleta ou uma execução de cenário após calcular.</p>
+        <div class="replay-summary"><span>Relógio <strong id="replay-clock">—</strong></span><span>Na fila <strong id="replay-waiting">0</strong></span><span>Em atendimento <strong id="replay-serving">0</strong></span><span>Saíram <strong id="replay-done">0</strong></span><span id="replay-status" role="status">Pronto para reproduzir</span></div>
+        <div class="stage-scroll"><svg id="replay-stage" viewBox="0 0 900 360" role="img" aria-label="Representação visual da fila e dos postos de atendimento"><g id="replay-room"></g><g id="replay-people"></g></svg></div>
+        <label class="timeline-label">Linha do tempo<input id="replay-time" type="range" min="0" max="90" step="0.01" value="0" disabled></label>
+        <p class="small muted">Os movimentos entre posições são ilustrativos. Os estados e contadores seguem os horários. A visualização inicial redistribui o CSV; as alternativas Poisson mostram a execução 1 de 30, não a média. A reprodução para ao sair desta aba.</p>
+      </article>
+    </section>
+    <section id="cenarios" class="section">
+      <div class="section-title"><div><p class="eyebrow">EXPERIMENTE ANTES DE MUDAR</p><h2>Compare cenários</h2></div><button id="add-scenario" class="button secondary">+ Novo cenário</button></div>
+      <p class="muted">Ajuste as variáveis e compare com a configuração atual. A coleta original é preservada.</p>
+      <div id="scenario-list" class="scenario-list"></div>
+      <div class="run-row"><p class="muted">30 repetições por cenário.<br>Mesma semente permite reproduzir os resultados.</p><button id="run" class="button primary">Calcular e comparar <span aria-hidden="true">→</span></button></div>
+      <article class="panel comparison"><div class="panel-heading"><div><h3>Impacto no atendimento</h3><p>Simulação: médias de 30 execuções com início vazio e chegadas durante a janela.</p></div></div><div class="table-scroll"><table><caption class="sr-only">Comparação dos resultados simulados e teóricos por cenário</caption><thead><tr><th>Cenário</th><th>Espera redistribuída</th><th>Espera simulada</th><th>Fila média simulada</th><th>Ocupação simulada</th><th>Concluídos na janela</th><th>Espera teórica M/M/c</th></tr></thead><tbody id="comparison-body"></tbody></table></div><p class="table-note">± indica o desvio padrão das médias de espera entre execuções, não um intervalo de confiança. Esperas acompanham todas as chegadas até o atendimento; fila e ocupação são médias temporais apenas na janela.</p></article>
+      <div id="comparison-note" class="insight"></div>
+    </section>
+    <section id="coleta" class="section">
+      <div class="section-title"><div><p class="eyebrow">BASE DO ESTUDO</p><h2>Dados da coleta</h2></div><div class="button-group"><button id="export-data" class="button secondary">Exportar coleta ↓</button></div></div>
+      <div class="import-row"><span id="file-name" class="muted"></span><a href="/dados/modelo_coleta_por_tipo.csv" download>Baixar cabeçalho em branco ↓</a><a href="/guia-coleta" target="_blank" rel="noopener">Guia de coleta ↗</a></div>
+      <details class="panel manual"><summary>+ Registrar um atendimento manualmente</summary><form id="manual-form"><label>ID anônimo<input name="id" required maxlength="60" placeholder="R001"></label><label>Chegada à fila<input name="chegada" type="datetime-local" step="1" required></label><label>Início do atendimento<input name="inicio_atendimento" type="datetime-local" step="1" required></label><label>Fim do atendimento<input name="fim_atendimento" type="datetime-local" step="1" required></label><label>Tipo de atendimento<select name="caixa"><option value="C">C — Convencional</option><option value="CA">CA — Autoatendimento</option></select></label><label>Fila<input name="fila" required value="F1" maxlength="60"></label><label>Origem<select name="origem"><option value="REAL">Real</option><option value="SINTETICO">Teste gerado</option></select></label><label>Operação / estabelecimento<input name="estabelecimento" maxlength="120" placeholder="Ex.: Angeloni"></label><label>Observações<input name="observacoes" maxlength="300" placeholder="Ex.: pausa no pagamento"></label><button class="button primary" type="submit">Adicionar e analisar</button></form></details>
+      <details class="panel raw-editor"><summary>Ver ou editar CSV completo</summary><p class="muted">Datas locais no formato AAAA-MM-DD HH:MM:SS. Aceita vírgula ou ponto e vírgula como separador. Após editar, clique em calcular.</p><label for="csv-text" class="sr-only">Conteúdo do CSV</label><textarea id="csv-text" spellcheck="false" rows="9"></textarea></details>
+      <div class="panel"><div class="panel-heading"><div><h3>Atendimentos registrados</h3><p id="data-count">Aguardando dados</p></div></div><div class="table-scroll records"><table><caption class="sr-only">Registros importados na última análise válida</caption><thead><tr><th>ID</th><th>Chegada</th><th>Início</th><th>Fim</th><th>Posto</th><th>Espera</th><th>Origem</th></tr></thead><tbody id="records-body"></tbody></table></div></div>
+      <p class="muted small">A coleta fica nesta página enquanto ela estiver aberta. Exporte o CSV para guardar suas alterações antes de fechar ou restaurar a demonstração.</p>
+    </section>
+    <section id="metodo" class="section"><div class="section-title"><div><p class="eyebrow">TRANSPARÊNCIA DOS RESULTADOS</p><h2>Como calculamos</h2></div></div><div class="method-grid"><article class="panel"><span class="method-number">01 / OBSERVAÇÃO</span><h3>O que aconteceu</h3><p>Espera = início − chegada. Atendimento = fim − início. Tempo no sistema = fim − chegada. A taxa de chegada usa a janela informada, incluindo intervalos sem chegadas.</p><p>Fila e sistema médios são áreas de tempo divididas pela duração da janela. Ocupação é tempo de postos ocupados dividido por postos × duração.</p></article><article class="panel"><span class="method-number">02 / TEORIA</span><h3>O que a fórmula estima</h3><p>M/M/c com chegadas Poisson, serviços exponenciais independentes, postos equivalentes do mesmo tipo, fila única FIFO, capacidade de espera ilimitada e regime estacionário. As distribuições ainda não foram verificadas. Com os dois tipos ativos, a fórmula é desabilitada e a comparação usa simulação.</p><p>Se λ ≥ cμ, não existe média estacionária finita. O resultado é marcado como sobrecarga, sem exibir uma espera finita.</p></article><article class="panel"><span class="method-number">03 / SIMULAÇÃO</span><h3>O que pode acontecer</h3><p>Chegadas Poisson com taxa constante e durações sorteadas da amostra do tipo de posto, ou da hipótese informada onde não há amostra. Começa sem clientes e aceita chegadas até o fim da janela, acompanhando todos até a saída.</p><p>Esta versão cobre o conjunto de postos de atendimento. A simulação ampliada exigida na parte B depende do mapeamento de outras atividades e recursos.</p></article></div><ul id="warnings" class="warnings"></ul></section>
+    <footer>Fluxo — Gestor de filas <span>Protótipo acadêmico · EPS7002 · Execução local</span></footer>
+    </div>
+  </main>
+</body>
+</html>
