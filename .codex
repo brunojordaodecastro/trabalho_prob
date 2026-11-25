@@ -528,6 +528,7 @@ O que foi feito:
 - Corrigida a referência à massa de teste disponível no README.
 - Excluídos do versionamento caches, ambientes virtuais e arquivos .env.
 - Testes: 8 aprovados; 5 com erro por ausência anterior de dois CSVs legados. O CSV atual e seu teste de redistribuição estão disponíveis.
+- Envio concluído por Git para main; 28 arquivos versionados. Uma cópia nova clonada do GitHub passou em git fsck e no teste de redistribuição do CSV atual. A integração recusou escrita (403); a credencial existente do Git permitiu o envio.
 
 Motivo:
 - Permitir recuperar o projeto e seus arquivos presentes após a formatação.
